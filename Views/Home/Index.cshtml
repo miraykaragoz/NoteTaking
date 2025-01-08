@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scribbly - Dijital Not Defteriniz</title>
+    <link rel="stylesheet" href="~/css/indexStyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="~/img/favicon.png">
+</head>
+<body>
+<header>
+    <nav>
+        <div class="logo">
+            <span class="pencil-icon">✏️</span>
+            <span>Scribbly</span>
+        </div>
+        <ul>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <li><a href="/Notes" class="notes-link">Notlarım</a></li>
+            }
+            else
+            {
+                <li><a href="/Home/SignIn" class="login-link">Giriş Yap</a></li>
+                <li><a href="/Home/SignUp" class="cta-button">Kayıt Ol</a></li>
+            }
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Düşüncelerinizi Her Zaman, Her Yerde Kaydedin</h1>
+            <p>Fikirlerinizi düzenleyin, verimliliğinizi artırın ve hiçbir şeyi unutmayın Scribbly ile.</p>
+            <a href="/Notes" class="cta-button">Başlayın - Ücretsizdir</a>
+        </div>
+        <div class="hero-image">
+            <img src="~/img/1.png" alt="Not Uygulaması Arayüzü">
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <h2>Neden Scribbly'yi Seçmelisiniz?</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>Kolay Düzenleme</h3>
+                <p>Notlarınızı etiketleyin, kategorilere ayırın ve kolayca yapılandırın.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Kesintisiz Senkronizasyon</h3>
+                <p>Notlarınıza her cihazdan, her zaman erişin.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Güçlü Arama</h3>
+                <p>Akıllı arama ile herhangi bir notu saniyeler içinde bulun.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Kişiselleştirilebilir Arayüz</h3>
+                <p>Uygulamayı tercihlerinize ve iş akışınıza göre uyarlayın.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Hazır mısınız?</h2>
+        <p>Not alma deneyimini dönüştüren binlerce kullanıcıya katılın.</p>
+        <a href="/Notes" class="cta-button">Ücretsiz Deneme Başlat</a>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-logo">
+            <span class="pencil-icon">✏️</span>
+            <span>Scribbly</span>
+        </div>
+        <div class="footer-links">
+            <a href="#">Gizlilik Politikası</a>
+            <a href="#">Hizmet Şartları</a>
+            <a href="#">Bize Ulaşın</a>
+        </div>
+    </div>
+    <p>&copy; @DateTime.Now.ToString("yyy") Scribbly. Tüm hakları saklıdır.</p>
+</footer>
+</body>
+</html>
